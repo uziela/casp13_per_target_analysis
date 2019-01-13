@@ -25,7 +25,7 @@ output_dir=$3
 
 echo "$script_name started with parameters: $*"
 
-mkdir $output_dir
+mkdir -p $output_dir
 
 for q in GDT_TS GDT_HA lDDT CAD ; do
     for i in $input_dir/*$q.tsv.$cor_type ; do
