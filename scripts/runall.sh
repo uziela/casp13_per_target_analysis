@@ -13,7 +13,7 @@ for i in topn_sorted_ours_out/*tsv ; do Rscript scripts/plot_topn_graph.R $i $i.
 # Commands needed to reproduce weighted correlation calculations
 for i in TSV_input/*tsv ; do Rscript scripts/per_target_wcorr.R $i ; done
 for i in TSV_input/*tsv ; do Rscript scripts/per_target_wwcorr.R $i ; done # with squared weights
-for cor_type in spearman wspearman pearson wpearson ; do
+for cor_type in spearman wspearman wwspearman pearson wpearson wwpearson ; do
     ./scripts/make_table.sh TSV_input $cor_type corw_out
 done
 ./scripts/sort_and_rename.sh corw_out corw_sorted_out
