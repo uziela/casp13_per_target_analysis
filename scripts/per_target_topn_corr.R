@@ -30,7 +30,7 @@ for (n in seq(10,150,10)) {
     for (target in targets) {
         #print(target)
         stats_target <- stats[stats$target == target,]
-        stats_target <- stats_target[order(stats_target$real_score),]
+        stats_target <- stats_target[order(-stats_target$real_score),]
         stats_topn <- head(stats_target, n)
         corr_pearson <- cor(stats_topn$predicted_score, stats_topn$real_score, method="pearson")
         corr_spearman <- cor(stats_topn$predicted_score, stats_topn$real_score, method="spearman")
