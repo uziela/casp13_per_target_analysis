@@ -30,7 +30,7 @@ N = nrow(stats)
 stats <- stats[order(rownames(stats)),]
 stats$AUC <- rowSums((stats[,-1] + stats[,-15])) / 2 / 15
 stats$pch <- 1:N
-stats$col <- rep(c(1:6,8),3)[1:20] # skip yellow (id=7)
+stats$col <- rep(c(1:6,8),3)[1:N] # skip yellow (id=7)
 stats <- stats[order(-stats$AUC),]
 #head(stats)
 
