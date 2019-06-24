@@ -34,7 +34,9 @@ stats$col <- rep(c(1:6,8),3)[1:N] # skip yellow (id=7)
 stats <- stats[order(-stats$AUC),]
 #head(stats)
 
-pdf(output_file)
+#pdf(output_file)
+#tiff(file = output_file, width = 4000, height = 4000, units = "px", res = 600)
+tiff(file = output_file, width = 2500, height = 2500, units = "px", res = 350)
 plot(topn, stats[1,1:15], type="n", xlim=c(10,150), ylim=c(min(stats[,1:15]),max(stats[,1:15])), ylab="Correlation", xlab="Top N models", xaxt='n')
 axis(1, at=topn, labels=topn, las=2)
 for (i in 1:N){
